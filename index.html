@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js"></script>
+  
 </head>
 <body>
 
@@ -36,8 +36,8 @@
 
       <!-- NAV -->
       <nav class="main-nav">
-        <a href="#">SUBMIT LOST ITEM</a>
-        <a href="#">SUBMIT FOUND ITEM</a>
+        <a href="#" onclick="openForm('lost')">SUBMIT LOST ITEM</a>
+        <a href="#" onclick="openForm('found')">SUBMIT FOUND ITEM</a>
         <a href="#">VIEW RECENT POSTS</a>
       </nav>
 
@@ -89,9 +89,9 @@
               </select>
             </div>
           </div>
-          <div class="button-row">
-             <button type="submit" class="search-btn">Submit Lost Item</button>
-             <button type="submit" class="search-btn">Submit Found Item</button>
+          <div class="button-row"> 
+            <button type="submit" class="search-btn">Submit Lost Item</button> 
+            <button type="submit" class="search-btn">Submit Found Item</button> 
           </div>
         </form>
       </div>
@@ -373,6 +373,21 @@
   </div>
 </footer>
 
- 
+ <div id="formModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+
+    <h2 id="formTitle">Submit Item</h2>
+
+    <form id="modalForm">
+      <input type="text" id="modalItem" placeholder="Item Name" required>
+      <input type="text" id="modalLocation" placeholder="Location" required>
+      <textarea placeholder="Description"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
+</div>
+<script src="java.js"></script>
 </body>
 </html>
